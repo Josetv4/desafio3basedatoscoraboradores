@@ -57,18 +57,76 @@ function Formulario({ AggColaborador, handleRegistro, confirmation, message }) {
 
     return (
         <div>
-            <h2>Agregar Colaboradores</h2>
-            <form className="form-container" onSubmit={handleSubmit}>
-                <div className="mb-3"><label htmlFor="name"> <input id='name' autoFocus className="form-control" type="text" placeholder="Nombre del Colaborador" value={name} onChange={(e) => setName(e.target.value)} /></label></div>
-                <div className="mb-3"><label htmlFor="email"><input id='email' className="form-control" type="email" placeholder="Correo del Colaborador" value={email} onChange={(e) => setEmail(e.target.value)} /></label></div>
-                <div className="mb-3"><label htmlFor="age"><input id='age' className="form-control" type="number" placeholder="Edad del Colaborador" value={age} onChange={(e) => setAge(e.target.value)} /></label></div>
-                <div className="mb-3"><label htmlFor="position"><input id='position' className="form-control" type="text" placeholder="Cargo del Colaborador" value={position} onChange={(e) => setPosition(e.target.value)} /></label></div>
-                <div className="mb-3"><label htmlFor="phone"><input id='phone' className="form-control" type="number" placeholder="Teléfono del Colaborador" value={phone} onChange={(e) => setPhone(e.target.value)} /></label></div>
-                <button type="submit" className="btn">Agregar Colaborador</button>
-            </form>
-            {alert ? <Alert type={confirmation} message={message} /> : null}
-        </div>
-    );
+        <h2>Agregar Colaboradores</h2>
+        <form className='form-container' onSubmit={handleSubmit}>
+            <div className='mb-3'>
+                <label htmlFor='name'>
+                    <input
+                        id='name'
+                        autoFocus
+                        className='form-control'
+                        type='text'
+                        placeholder='Nombre del Colaborador'
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                    />
+                </label>
+            </div>
+            <div className='mb-3'>
+                <label htmlFor='email'>
+                    <input
+                        id='email'
+                        className='form-control'
+                        type='email'
+                        placeholder='Correo del Colaborador'
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                </label>
+            </div>
+            <div className='mb-3'>
+                <label htmlFor='age'>
+                    <input
+                        id='age'
+                        className='form-control'
+                        type='number'
+                        placeholder='Edad del Colaborador'
+                        value={age}
+                        onChange={(e) => setAge(e.target.value)}
+                    />
+                </label>
+            </div>
+            <div className='mb-3'>
+                <label htmlFor='position'>
+                    <input
+                        id='position'
+                        className='form-control'
+                        type='text'
+                        placeholder='Cargo del Colaborador'
+                        value={position}
+                        onChange={(e) => setPosition(e.target.value)}
+                    />
+                </label>
+            </div>
+            <div className='mb-3'>
+                <label htmlFor='phone'>
+                    <input
+                        id='phone'
+                        className='form-control'
+                        type='number'
+                        placeholder='Teléfono del Colaborador'
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                    />
+                </label>
+            </div>
+            <button type='submit' className='btn'>
+                Agregar Colaborador
+            </button>
+        </form>
+        {alert ? <Alert type={confirmation} message={message} /> : null}
+    </div>
+);
 }
 
 export default Formulario;
