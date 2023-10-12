@@ -30,6 +30,11 @@ button {
     color: white;
 }
 
+.search{
+    width: 67vw;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+}
 
 /* Estilos para dispositivos de tamaño tablet */
 @media (max-width: 768px) {
@@ -60,6 +65,10 @@ button {
     .btn {
         font-size: large;
     }
+
+    .search{
+        width: 95vw;
+    }
 }
 
 /* Estilos para dispositivos de tamaño teléfono */
@@ -67,6 +76,6 @@ button {
 
     label,
     button {
-        width: 100%;
+        width: 90%;
     }
 }
