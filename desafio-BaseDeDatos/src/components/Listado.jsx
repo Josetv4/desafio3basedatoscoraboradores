@@ -13,8 +13,8 @@ const Listado = ({ colaboradores, searchTerm }) => {
     });
 
     return (
-        <div className="table-responsive table">
-            <table className="table table-striped table-bordered table-hover">
+        <div className='table-responsive table'>
+            <table className='table table-striped table-bordered table-hover'>
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -27,13 +27,25 @@ const Listado = ({ colaboradores, searchTerm }) => {
                 </thead>
                 <tbody>
                     {filteredColaboradores.map((colaborador) => (
-                        <tr key={colaborador.id}>
-                            <td>{colaborador.id}</td>
-                            <td>{colaborador.nombre}</td>
-                            <td>{colaborador.correo}</td>
-                            <td>{colaborador.edad}</td>
-                            <td>{colaborador.cargo}</td>
-                            <td>{colaborador.telefono}</td>
+                        <tr key={ colaborador.id }>
+                            <td>
+                                { colaborador.id }
+                            </td>
+                            <td>
+                                { colaborador.nombre }
+                            </td>
+                            <td>
+                                { colaborador.correo }
+                            </td>
+                            <td>
+                                { colaborador.edad }
+                            </td>
+                            <td>
+                                { colaborador.cargo }
+                            </td>
+                            <td>
+                                { colaborador.telefono }
+                            </td> 
                         </tr>
                     ))}
                 </tbody>
