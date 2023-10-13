@@ -1,6 +1,6 @@
 
 
-const Listado = ({ colaboradores, searchTerm }) => {
+const Listado = ({ colaboradores, setColaboradores, searchTerm }) => {
     const filteredColaboradores = colaboradores.filter((colaborador) => {
         const searchTermLower = searchTerm.toLowerCase();
         return (
@@ -11,6 +11,14 @@ const Listado = ({ colaboradores, searchTerm }) => {
             colaborador.telefono.toString().includes(searchTermLower)
         );
     });
+
+    
+  const eliminarTarea = (id) => {
+    const listaFiltrada = colaboradores.filter(
+      (task) => task.id !== id
+    );
+    setColaboradores(listaFiltrada);
+  };
 
     return (
         <div className="table-responsive table">
@@ -34,7 +42,7 @@ const Listado = ({ colaboradores, searchTerm }) => {
                             <td>{colaborador.edad}</td>
                             <td>{colaborador.cargo}</td>
                             <td >{colaborador.telefono} </td>
-                            <td><button type="button" className="btn btn-danger">x</button></td>
+                            <td><button type="button" onClick={() => eliminarTarea(colaborador.id)} className="btn btn-danger">x</button></td>
                         </tr>
                     ))}
                 </tbody>

@@ -37,7 +37,7 @@ function App() {
       <h1>Listado de Colaboradores</h1>      
       <Buscador searchTerm={searchTerm} handleSearch={(e) => setSearchTerm(e.target.value)} />
       <div className="container-app">
-        <Listado colaboradores={colaboradores} searchTerm={searchTerm} />
+        <Listado colaboradores={colaboradores} setColaboradores={setColaboradores} searchTerm={searchTerm} />
         <Formulario
           AggColaborador={agregarColaborador}
           handleRegistro={handleRegistro}
