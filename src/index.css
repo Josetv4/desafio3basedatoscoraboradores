@@ -1,0 +1,74 @@
+/* Estilo base para pantalla completa */
+
+body {
+    margin: 1vw;
+}
+
+h1 {
+    margin: 2vw;
+}
+.container-app {
+    display: flex;
+    gap: 1vw;
+    text-align: center;
+}
+
+.sub-container {
+    min-width: 69vw;
+}
+.form-container {
+    width: 30vw;
+}
+
+label,
+button {
+    width: 95%;
+}
+
+.btn-danger{
+    border-radius: 100%;
+    margin:0% 5%;
+
+
+
+}
+
+/* Estilos para dispositivos de tamaño tablet */
+@media (max-width: 768px) {
+    .app {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    h1 {
+        color: #e0a3a3;
+    }
+
+    .container-app {
+        font-size: 0.8rem;
+        flex-direction: column-reverse;
+    }
+
+    p {
+        font-size: large;
+    }
+
+    .form-container {
+        width: 100%;
+        min-width: auto;
+        font-size: xx-large;
+    }
+
+    .btn {
+        font-size: large;
+    }
+}
+
+/* Estilos para dispositivos de tamaño teléfono */
+@media (max-width: 480px) {
+
+    label,
+    button {
+        width: 100%;
+    }
+}
