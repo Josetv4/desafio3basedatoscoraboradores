@@ -1,4 +1,8 @@
+
+
 const Buscador = ({ searchTerm, handleSearch }) => {
+
+    
     return (
         <div>
             <input
