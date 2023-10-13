@@ -26,11 +26,12 @@ button {
 }
 
 .btn-danger{
-    border-radius: 100%;
+ 
     margin:0% 5%;
-
-
-
+}
+.btn-info{
+    background-color: #5200ff;
+    color: #fff;
 }
 
 /* Estilos para dispositivos de tamaño tablet */

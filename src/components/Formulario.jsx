@@ -5,49 +5,20 @@ import { v4 as uuidv4 } from 'uuid';
 
 function Formulario({ AggColaborador, handleRegistro, confirmation, message }) {
   const [name, setName] = useState("");
-
-
-  const [alert, setAlert]= useState (false);
-
-
-   
   const [email, setEmail] = useState("");
   const [age, setAge] = useState("");
   const [phone, setPhone] = useState("");
   const [position, setPosition] = useState("");
-  const [listaColaboradores, setListaColaboradores] =
-    useState(BaseColaboradores);
+  const [listaColaboradores, setListaColaboradores] = useState(BaseColaboradores);
+  const [alert, setAlert] = useState(false);
+
   const validateEmail = (email) => {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+/;
     return re.test(email);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  
-
-    const nuevoColaborador = {
-       id: uuidv4(),// Generar un ID único** AYUDA NO SE COMO PASARLO SOLO COMO NUMERO JAJAJAJA
-      nombre: name,
-      correo: email,
-      edad: age,
-      cargo: position,
-      telefono: phone,
-    };
-
-
-
-    // Agrego el nuevo Colaborador
-    setListaColaboradores([...listaColaboradores, nuevoColaborador]);
-
-    AggColaborador(nuevoColaborador);
-
-    // Vaciamos el formulario
-    setName("");
-    setEmail("");
-    setAge("");
-    setPhone("");
-    setPosition("");
 
     if (
       name === "" ||
@@ -67,9 +38,29 @@ function Formulario({ AggColaborador, handleRegistro, confirmation, message }) {
       return;
     }
 
+    const nuevoColaborador = {
+      id: uuidv4(),
+      nombre: name,
+      correo: email,
+      edad: age,
+      cargo: position,
+      telefono: phone,
+    };
+
+    // Agrego el nuevo Colaborador
+    setListaColaboradores([...listaColaboradores, nuevoColaborador]);
+
+    AggColaborador(nuevoColaborador);
+
+    // Vaciamos el formulario
+    setName("");
+    setEmail("");
+    setAge("");
+    setPhone("");
+    setPosition("");
+
     handleRegistro(1);
     setAlert(true);
-    console.log(setAlert)
   };
 
   return (
@@ -78,9 +69,8 @@ function Formulario({ AggColaborador, handleRegistro, confirmation, message }) {
       <form className="form-container" onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="name">
-            {" "}
             <input
-            required
+              
               id="name"
               autoFocus
               className="form-control"
@@ -94,7 +84,7 @@ function Formulario({ AggColaborador, handleRegistro, confirmation, message }) {
         <div className="mb-3">
           <label htmlFor="email">
             <input
-            required
+              
               id="email"
               className="form-control"
               type="email"
@@ -107,7 +97,7 @@ function Formulario({ AggColaborador, handleRegistro, confirmation, message }) {
         <div className="mb-3">
           <label htmlFor="age">
             <input
-            required
+              
               id="age"
               className="form-control"
               type="number"
@@ -120,7 +110,7 @@ function Formulario({ AggColaborador, handleRegistro, confirmation, message }) {
         <div className="mb-3">
           <label htmlFor="position">
             <input
-            required
+              
               id="position"
               className="form-control"
               type="text"
@@ -133,7 +123,7 @@ function Formulario({ AggColaborador, handleRegistro, confirmation, message }) {
         <div className="mb-3">
           <label htmlFor="phone">
             <input
-            required
+              
               id="phone"
               className="form-control"
               type="number"
